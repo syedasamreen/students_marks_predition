@@ -18,4 +18,4 @@ def predict():
 
     # validate input hours
     if input_feature[0] < 0 or input_feature[0]>24:
-        return render_template('index,html',prediction_text = "Please a valid hour")
+        return render_template('index.html',prediction_text = "Please a valid hour")
