@@ -19,7 +19,7 @@ def predict():
 
     # validate input hours
     if input_feature[0] < 0 or input_feature[0]>24:
-        return render_template('index,html',prediction_text = "Please Enter a valid hour")
+        return render_template('index.html',prediction_text = "Please Enter a valid hour")
     output = model.predict([feature_value])[0][0].round(2)
     df = pd.concat([df,pd.DataFrame({'Study Hours': input_feature,'Marks obtained':[output]})],ignore_index=True)
     print(df)
