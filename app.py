@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, render_template
 import joblib
+import os
 app = Flask(__name__)
 model = joblib.load('LR_studentsMarks_pred.pkl')
 df = pd.DataFrame()
@@ -26,4 +27,5 @@ def predict():
     return render_template('index.html',prediction_text = "You will get {}% marks, when you study {} hours".format(output,int(feature_value[0])))
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, port=port)
