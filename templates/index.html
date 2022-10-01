@@ -1,0 +1,55 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Students Marks prediction on study Hours</title>
+</head>
+ <style> h1     {color:grey;}
+      .button_css {
+       border: 4px solid;
+       color: black;
+       padding: 20px;
+       text-align: center;
+        text_transform: uppercase;
+        background-color: #4CAF50; /* Green */
+       text-decoration: none;
+       display: inline-block;
+       transition: all 0.4s ease 0s
+       font-size: 16px;
+  }
+  .button_css:hover {
+       border: 4px solid;
+       color: white;
+       background: #808080
+       border-color:#C0C0C0
+       transition: all 0.4s ease 0s
+
+     }
+ </style>
+<body>
+<div class="login" >
+    <center>
+    <form action = "{{ url_for('predict')}}" method="post">
+        <h1> Enter your studying hours to Predict the Marks</h1>
+        <input align="center" type="number" name="study_hours" placeholder="Study Hours" required="required" width="48">
+        <br>
+
+        <br>
+
+
+        <div class = "button_cont" align="center"><a class="button_css" target="_blank" rel="nofollow noopner">
+            <button type="Submit" class="btn btn-primary btn-block btn-large"><strong>Predict marks</strong></button></a>
+
+
+        </div>
+    </form>
+    </center>
+   <dev>
+        <center>
+            <h2>{{prediction_text}}</h2>
+        </center>
+    </dev>
+
+</div>
+</body>
+</html>
